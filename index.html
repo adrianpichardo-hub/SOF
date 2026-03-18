@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ISA - Consola Operativa Unificada</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <header class="logo">ISA</header>
+
+  <section class="setup">
+    <div class="field">
+      <label>Remolcador</label>
+      <input type="text" id="v_rem" value="HB SCORPIUS">
+    </div>
+    <div class="field">
+      <label>Lugar</label>
+      <input type="text" id="v_lug" value="Terminal Navios">
+    </div>
+    <div class="field">
+      <label>Fecha (dd/mm/aaaa)</label>
+      <input type="text" id="v_fec" value="13/03/2026" placeholder="dd/mm/aaaa">
+    </div>
+    <div class="field">
+      <label>H. Arribo</label>
+      <input type="time" id="h_arr" value="01:15">
+    </div>
+    <div class="field">
+      <label>H. Alistamiento</label>
+      <input type="time" id="h_ali" value="01:15">
+    </div>
+    <div class="field">
+      <label>H. Autoridades</label>
+      <input type="time" id="h_aut" value="02:00">
+    </div>
+    <div class="field">
+      <label>H. Libre Plática</label>
+      <input type="time" id="h_pla" value="02:10">
+    </div>
+  </section>
+
+  <textarea id="logInput" placeholder="Pega aquí el log de Navios..." rows="12"></textarea>
+
+  <div class="btn-group">
+    <button class="btn btn-primary" id="btnProcesar">Generar SOF</button>
+    <button class="btn btn-success" id="btnXLS" style="display:none;">Descargar Excel</button>
+    <button class="btn btn-secondary" id="btnLimpiar">Limpiar</button>
+  </div>
+
+  <table id="tablaSOF">
+    <thead>
+      <tr>
+        <th>FECHA</th>
+        <th>BARCAZA</th>
+        <th>DESDE</th>
+        <th>HASTA</th>
+        <th>OBSERVACIONES</th>
+      </tr>
+    </thead>
+    <tbody id="bodySOF"></tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
